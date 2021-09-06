@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const port = 3030;
 
@@ -9,6 +10,7 @@ const chatLog = [
     pDate: new Date(),
   },
 ];
+app.use(cors());
 app.use(express.json());
 app.get("/", (req, res) => {
   res.json([...chatLog].reverse());
@@ -22,6 +24,11 @@ app.post("/", (req, res) => {
   } else {
     req.json({ status: "nok", msg: "Malformed json for chat message" });
   }
+});
+
+app.delete("/", (req, res) => {
+  chatLog = [];
+  res.json({ status: "ok" });
 });
 app.listen(port, () => {
   console.log(`Chatapp is listening at ${port}`);
