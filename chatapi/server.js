@@ -3,7 +3,7 @@ const cors = require("cors");
 const app = express();
 const port = 3030;
 
-const chatLog = [
+let chatLog = [
   {
     userName: "m0nsta4K1lla4",
     msg: "Jag är bäst på javascript!",
@@ -27,7 +27,7 @@ app.post("/", (req, res) => {
 });
 
 app.delete("/", (req, res) => {
-  chatLog = [];
+  chatLog.length = 0;
   res.json({ status: "ok" });
 });
 app.listen(port, () => {
