@@ -30,10 +30,6 @@ app.delete("/", (req, res) => {
   chatLog.length = 0;
   res.json({ status: "ok" });
 });
-app.listen(port, () => {
-  console.log(`Chatapp is listening at ${port}`);
-});
-
 app.get("/places.json", (req, res) => {
   const p = [
     { name: "Bysjön", lat: "60.534488156", lng: "15.398712158" },
@@ -67,4 +63,8 @@ app.get("/places.json", (req, res) => {
   } else {
     res.json(p);
   }
+});
+
+app.listen(port, () => {
+  console.log(`Chatapp is listening at ${port}`);
 });
