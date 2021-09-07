@@ -36,7 +36,7 @@ multiplyAsync(2, 3, function (err, result) {
 ## Task 3
 
 Use the addAsync from earlier excercise and multiplyAsync
-functions to perform the two-step operation of (2+2) / 6
+functions to perform the two-step operation of (2+2) \* 6
 and print out the result.
 
 ### Example:

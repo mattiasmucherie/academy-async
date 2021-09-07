@@ -7,7 +7,7 @@ Eacho group has one "driver" who types, the three other will tell the "driver" w
 
 ### Endpoints
 
-The API exists at academy.brunstrom.me
+The API exists at http://academy.brunstrom.me
 The API accepts two request:
 
 - GET which returns a JSON-string with the chat log in the following format:
@@ -24,8 +24,8 @@ The API accepts two request:
 
 ```json
 {
-  "msg" : "string",
-  "userName" : "string
+  "msg": "string",
+  "userName": "string"
 }
 ```
 

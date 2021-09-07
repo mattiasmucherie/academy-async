@@ -18,8 +18,7 @@ and update the UI to reflect the latest value
 
 Add a google map on your site.
 A api-key can be found in the pptx for the lecture.
-You can follow instructions how to make it on https://www.w3schools.com/graphics/google_maps_intro.asp but you'll need to figure out how
-to add your current position to the map.
+You can follow instructions how to make it on https://www.w3schools.com/graphics/google_maps_intro.asp but you'll need to figure out how to add your current position to the map.
 Hint: Here you'll need to combine the google maps api and the browser navigator api.
 
 ### Task 3.1
