@@ -72,7 +72,7 @@ app.get("/slowplaces.json", async (req, res) => {
 });
 
 app.get("/prizes", (req, res) => {
-  res.sendFile("./prize.json");
+  res.sendFile("./prize.json", { root: __dirname });
 });
 
 app.listen(port, () => {
