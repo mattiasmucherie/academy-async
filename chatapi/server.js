@@ -71,6 +71,10 @@ app.get("/slowplaces.json", async (req, res) => {
   }, 10000);
 });
 
+app.get("/prizes", (req, res) => {
+  res.sendFile("./prize.json");
+});
+
 app.listen(port, () => {
   console.log(`Chatapp is listening at ${port}`);
 });
