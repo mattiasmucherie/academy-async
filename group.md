@@ -7,7 +7,7 @@ Eacho group has one "driver" who types, the three other will tell the "driver" w
 
 ### Endpoints
 
-The API exists at http://academy.brunstrom.me
+Install and run the chat api server. It's located in the chatapi directory in this repo.
 The API accepts two request:
 
 - GET which returns a JSON-string with the chat log in the following format:

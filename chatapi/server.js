@@ -2,30 +2,6 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const port = 3030;
-const places = [
-  { name: "Bysjön", lat: "60.534488156", lng: "15.398712158" },
-  { name: "Torsång motormuseum", lat: "60.4629223", lng: "15.5554419" },
-  {
-    name: "Sahlins Struts",
-    lat: "60.453578003119",
-    lng: "15.492610931397",
-  },
-  {
-    name: "Lindön",
-    lat: "60.500652202873",
-    lng: "15.58170318577",
-  },
-  {
-    name: "Tvärstupet",
-    lat: "60.369665197",
-    lng: "15.430641174",
-  },
-  {
-    name: "Kungsladan",
-    lat: "60.475643285",
-    lng: "15.721135139",
-  },
-];
 
 let chatLog = [
   {
@@ -34,6 +10,7 @@ let chatLog = [
     pDate: new Date(),
   },
 ];
+
 app.use(cors());
 app.use(express.json());
 app.get("/", (req, res) => {
@@ -54,26 +31,7 @@ app.delete("/", (req, res) => {
   chatLog.length = 0;
   res.json({ status: "ok" });
 });
-app.get("/places.json", (req, res) => {
-  const rnd = Math.floor(Math.random() * 100) + 1;
-  if (rnd > 80) {
-    res.status(500).json({ status: "nok", msg: "The server went boo boo" });
-  } else if (rnd > 60) {
-    res.status(403).end();
-  } else {
-    res.json(places);
-  }
-});
 
-app.get("/slowplaces.json", async (req, res) => {
-  setTimeout(() => {
-    res.send(places);
-  }, 10000);
-});
-
-app.get("/prizes", (req, res) => {
-  res.sendFile("./prize.json", { root: __dirname });
-});
 
 app.listen(port, () => {
   console.log(`Chatapp is listening at ${port}`);
