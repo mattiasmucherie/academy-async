@@ -6,7 +6,7 @@ This might require you to wrap some of the functions you have been using into so
 
 Example: sumAsync
 
-```javascript
+```js
 //Old version
 function sumAsync(a, b, callback) {
   return a + b;

@@ -8,7 +8,7 @@ returns a new Promise. If the paramter is true resolve the promise with the retu
 Example:
 
 ```javascript
-function myProm() {
+function myProm(param) {
   //...
 }
 
