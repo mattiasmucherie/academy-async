@@ -37,25 +37,22 @@ multiplyAsync(2, 3, function (err, result) {
 
 Create a `addAsync` and use it with `multiplyAsync`
 functions to perform the two-step operation of `(2 + 2) * 6`
-and print out the result.
+and print out the result. It should also have a delay of 2 seconds.
 
 ### Example:
 
 ```javascript
-// 2 + 2
-addAsync(2, 2, function (err, result) {
-  console.log(result);
-});
-// 4 * 6
-multiplyAsync(4, 6, function (err, result) {
-  console.log(result);
+addAsync(2, 2, (addError, addResult) => {
+  multiplyAsync(addResult, 6, (multiErr, multiResult) => {
+    console.log(multiResult);
+  });
 });
 ```
 
 ## Task 4
 
 Create a function `divideAsync(a, b, callback)` in the same
-format as the others.
+format as the others. (Also with 2 seconds delay)
 Use the `addAsync`, `multiplyAsync` and `divideAsync` functions to
 perform a three-step operation of `(5 + 5) * 6 / 10` and print
 out the result.
@@ -63,21 +60,11 @@ out the result.
 ### Example:
 
 ```javascript
-// 5 + 5
-addAsync(5, 5, function (err, result) {
-  console.log(result);
+addAsync(5, 5, (addError, addResult) => {
+  multiplyAsync(addResult, 6, (multiErr, multiResult) => {
+    divideAsync(multiResult, 10, (divideErr, divideResult) => {
+      console.log(divideResult);
+    });
+  });
 });
-
-// 10 * 6
-multiplyAsync(10, 6, function (err, result) {
-  console.log(result);
-});
-
-// 60 / 10
-
-divideAsync(60, 10, function (err, result) {
-  console.log(result);
-});
-
-// (5 + 5) * 6 / 10
 ```
