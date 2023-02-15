@@ -23,7 +23,7 @@ app.post("/", (req, res) => {
     chatLog.push(log);
     res.json([...chatLog].reverse());
   } else {
-    req.json({ status: "nok", msg: "Malformed json for chat message" });
+    res.json({ status: "nok", msg: "Malformed json for chat message" });
   }
 });
 
@@ -31,7 +31,6 @@ app.delete("/", (req, res) => {
   chatLog.length = 0;
   res.json({ status: "ok" });
 });
-
 
 app.listen(port, () => {
   console.log(`Chatapp is listening at ${port}`);
