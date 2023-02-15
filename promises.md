@@ -12,12 +12,12 @@ function myProm(param) {
   //...
 }
 
-const promise = new myProm(true);
+const promise = myProm(true);
 promise.then((data) => {
   console.log(data); //-> outputs 'success'
 });
 
-const promise2 = new myProm(false);
+const promise2 = myProm(false);
 promise2.then(/*...*/).catch((error) => {
   console.log(error); //-> outputs 'error'
 });
